@@ -1,0 +1,88 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaApplication1.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:AvaloniaApplication1.Models"
+        xmlns:i="using:Avalonia.Xaml.Interactivity"
+        xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
+        xmlns:bh="https://www.myget.org/F/xamlbehaviors-nightly/api/v2"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaApplication1">
+       
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    <Window.Resources>
+        <models:Converter x:Key="Converter"/>
+    </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+          
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="5*"/>
+            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="80*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Name="mainGrid"  VerticalScrollBarVisibility="Disabled" Grid.Row="0" Grid.RowSpan="{Binding Span}" Grid.Column="1" AutoGenerateColumns="True" ItemsSource="{Binding Data, Converter={StaticResource Converter}}" IsReadOnly="True" SelectedItem="{Binding Selected}"  SelectionChanged="DataGrid_OnSelectionChanged">
+        </DataGrid>
+        <DataGrid  VerticalScrollBarVisibility="Disabled" Grid.Row="1" Grid.Column="1"  Name="DataGrid2" IsEnabled="{Binding HasTwoTables}" IsVisible="{Binding HasTwoTables}" AutoGenerateColumns="True" ItemsSource="{Binding Orderlines, Converter={StaticResource Converter}}" IsReadOnly="True" >
+
+        </DataGrid>
+   <TreeView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" >
+      
+           <TextBlock> Таблицы</TextBlock>
+ 
+       <TreeViewItem >
+          <Grid>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
+              </Grid.RowDefinitions>
+              <Button Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  BookClick}">Книги</Button>
+               <Button  Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  AuthorClick}">Авторы</Button>
+               <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  PublisherClick}">Издательства</Button>
+               <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  GenreClick}">Жанры</Button>
+               <Button Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  LocationClick}">Отделы</Button>
+               <Button Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  ClientClick}">Клиенты</Button>
+               <Button Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  EmployeeClick}">Сотрудники</Button>
+               <Button Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  OrderClick}">Заказы</Button>
+          </Grid>
+       </TreeViewItem>
+       <TextBlock>  Статистика</TextBlock>
+       <TreeViewItem >
+           <StackPanel Margin="-50,0" >
+               <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BookSaleStat}" >популярность книг</Button>
+           </StackPanel>
+       </TreeViewItem>
+   </TreeView>
+      <Grid Grid.Row="2" Grid.Column="1">
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="20*"></ColumnDefinition>
+              <ColumnDefinition Width="20*"></ColumnDefinition>
+              <ColumnDefinition Width="20*"></ColumnDefinition>
+              <ColumnDefinition Width="20*"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+          <Button Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding Save}" > <TextBlock VerticalAlignment="Center" FontSize="20"  HorizontalAlignment="Center"  > сохранить </TextBlock> </Button>
+          <Button Grid.Column="1"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding Add}"> <TextBlock VerticalAlignment="Center"  FontSize="20" HorizontalAlignment="Center"> добавить </TextBlock> </Button>
+          <Button Grid.Column="2"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding Delete}"> <TextBlock VerticalAlignment="Center"  FontSize="20" HorizontalAlignment="Center">  удалить </TextBlock> </Button>
+          <Button Grid.Column="3"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding Update}"> <TextBlock VerticalAlignment="Center"  FontSize="20" HorizontalAlignment="Center"> Изменить </TextBlock> </Button>
+    </Grid>
+        <TextBlock Grid.Row="2" Text="{Binding Text}"></TextBlock>
+    </Grid>
+</Window>

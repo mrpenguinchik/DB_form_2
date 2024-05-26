@@ -1,0 +1,58 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:AvaloniaApplication1.Models"
+        xmlns:dialogsViewModels="clr-namespace:AvaloniaApplication1.ViewModels.DialogsViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.BookAddEdit"
+        x:DataType="dialogsViewModels:BookAddEditvm"
+        Title="redact">
+    <Window.Styles>
+        <StyleInclude Source="/Views/dataerror.axaml" />
+    </Window.Styles>
+                <StackPanel>
+                    <TextBlock FontSize="24" HorizontalAlignment="Center"> Введите данные книги</TextBlock>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Название</TextBlock>
+                    <TextBox HorizontalAlignment="Stretch"  Text="{Binding Name}"></TextBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Цену</TextBlock>
+                    <TextBox HorizontalAlignment="Stretch" Text="{Binding Price}"></TextBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Артикул</TextBlock>
+                    <TextBox HorizontalAlignment="Stretch" Text="{Binding Articul}"></TextBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Штрихкод</TextBlock>
+                    <TextBox HorizontalAlignment="Stretch" Text="{Binding Barcode}"></TextBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Автор</TextBlock>
+                    <TextBox Text="{Binding FindAuthor}"></TextBox>
+                  <ComboBox ItemsSource="{Binding Authors}" SelectedItem="{Binding SelectedAuthor}" ></ComboBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center">Издатель</TextBlock>
+                    <TextBox Text="{Binding FindPublisher}"></TextBox>
+                    <ComboBox ItemsSource="{Binding Publishers}" SelectedItem="{Binding SelectedPublisher}" ></ComboBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Отдел</TextBlock>
+                    <TextBox Text="{Binding FindLocation}"></TextBox>
+                    <ComboBox ItemsSource="{Binding Locations}" SelectedItem="{Binding SelectedLocation}" ></ComboBox>
+           
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"></RowDefinition>
+                            <RowDefinition  Height="40*"></RowDefinition>
+                            <RowDefinition  Height="40*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ListBox Grid.Row="1" Grid.Column="3" ItemsSource="{Binding NewGenres}" SelectedItem="{Binding SelectedNewGenre}" SelectionMode="Single"></ListBox>
+                        <Button Grid.Row="1" Grid.Column="1" Command="{Binding AddGenre}">Добавить жанр</Button>
+                        <Button Grid.Row="1" Grid.Column="2"  Command="{Binding DeleteGenre}"> убрать жанр </Button>
+                        <TextBlock  Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center"> Отдел</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding FindGenre}"></TextBox>
+                        <ComboBox Grid.Row="2" ItemsSource="{Binding Genres}" SelectedItem="{Binding SelectedGenre}" ></ComboBox>
+                        
+                    </Grid>
+                    <Button Command="{Binding Close}">Подтвердить</Button>
+                </StackPanel>
+      
+    
+</Window>

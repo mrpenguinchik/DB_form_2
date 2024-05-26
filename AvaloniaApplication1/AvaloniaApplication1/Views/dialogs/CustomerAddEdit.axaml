@@ -1,0 +1,24 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.dialogs.CustomerAddEdit"
+        xmlns:dialogsViewModels="clr-namespace:AvaloniaApplication1.ViewModels.DialogsViewModels"
+        x:DataType="dialogsViewModels:CustomerAddEditvm"
+        
+        Title="CustomerAddEdit">
+    <Window.Styles>
+        <StyleInclude Source="/Views/dataerror.axaml" />
+    </Window.Styles>
+    <StackPanel>
+        <TextBlock FontSize="24" HorizontalAlignment="Center"> Введите данные клиента</TextBlock>
+        <TextBlock FontSize="16" HorizontalAlignment="Center"> ФИО клиента</TextBlock>
+        <TextBox HorizontalAlignment="Stretch" Text="{Binding Name}" ></TextBox>
+        <TextBlock FontSize="16" HorizontalAlignment="Center"> Количество бонусов</TextBlock>
+        <TextBox HorizontalAlignment="Stretch" Text="{Binding Bonus}" >
+            
+        </TextBox>
+        <Button Command="{Binding Close}">Подтвердить</Button>
+    </StackPanel>
+</Window>

@@ -1,0 +1,47 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:dialogsViewModels="clr-namespace:AvaloniaApplication1.ViewModels.DialogsViewModels"
+        x:Class="AvaloniaApplication1.Views.dialogs.OrderAddEdit"
+        x:DataType="dialogsViewModels:OrderAddEditvm"
+        Title="OrderAddEdit">
+   <Window.Styles>
+        <StyleInclude Source="/Views/dataerror.axaml" />
+    </Window.Styles>
+                <StackPanel>
+                    <TextBlock FontSize="24" HorizontalAlignment="Center"> Введите данные заказа</TextBlock>
+                 
+                    <TextBlock FontSize="16" HorizontalAlignment="Center"> Клиент</TextBlock>
+                    <TextBox Text="{Binding FindCustomer}"></TextBox>
+                  <ComboBox ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer}" ></ComboBox>
+                    <TextBlock FontSize="16" HorizontalAlignment="Center">Работник</TextBlock>
+                    <TextBox Text="{Binding FindEmployee}"></TextBox>
+                    <ComboBox ItemsSource="{Binding Employees}" SelectedItem="{Binding SelectedEmployee}" ></ComboBox>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="50*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20*"></RowDefinition>
+                            <RowDefinition  Height="40*"></RowDefinition>
+                            <RowDefinition  Height="40*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <ListBox Grid.Row="2" Grid.Column="3" ItemsSource="{Binding NewOrderLines}" SelectedItem="{Binding SelectedOrderLine}" SelectionMode="Single"></ListBox>
+                        <Button Grid.Row="1" Grid.Column="1" Command="{Binding AddOrderLine}">Добавить книгу</Button>
+                        <Button Grid.Row="1" Grid.Column="2"  Command="{Binding DeleteOrderLine}"> Убрать книгу</Button>
+                        <TextBlock  Grid.ColumnSpan="3" FontSize="16" HorizontalAlignment="Center"> Строки заказа</TextBlock>
+                        <TextBox Grid.Row="1" Text="{Binding FindBook}"></TextBox>
+                        <TextBox Grid.Column="3" Grid.Row="1" Text="{Binding Amount}"></TextBox>
+                        <ComboBox Grid.Row="2" ItemsSource="{Binding Books}" SelectedItem="{Binding SelectedBook}" ></ComboBox>
+                        
+                    </Grid>
+                    <Button Command="{Binding Close}">Подтвердить</Button>
+                </StackPanel>
+      
+</Window>
