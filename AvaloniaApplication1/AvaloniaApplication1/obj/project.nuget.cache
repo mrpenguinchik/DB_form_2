@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b7tE+zW8BNDZuww7eLQvzR2IsGSqHJAkDWfwufsDSKX1atNbFp8VmxdVKGmmZE4PKwZQtM6Yws6QViPGtQjGBQ==",
+  "dgSpecHash": "mJlHj5oRBAhwXn/aPL6TFqpv//F3QSnpMfPUb4cz19e8ZK4/KnDKmpG8EOSrYorYa7wktaJt4YethE5BFOp+xg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\RiderProjects\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj",
+  "projectFilePath": "C:\\Users\\user\\DB_form_2\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\avalonia\\11.0.10\\avalonia.11.0.10.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",

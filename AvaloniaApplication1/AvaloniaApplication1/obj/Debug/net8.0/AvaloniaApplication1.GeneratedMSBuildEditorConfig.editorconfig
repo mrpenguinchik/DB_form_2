@@ -13,39 +13,42 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AvaloniaApplication1
-build_property.ProjectDir = C:\Users\user\RiderProjects\AvaloniaApplication1\AvaloniaApplication1\
+build_property.ProjectDir = C:\Users\user\DB_form_2\AvaloniaApplication1\AvaloniaApplication1\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/App.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dataerror.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dataerror.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/AuthorAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/AuthorAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/BookAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/BookAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/CustomerAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/CustomerAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/EmployeeAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/EmployeeAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/GenreAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/GenreAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/LocationAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/LocationAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/OrderAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/OrderAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/PublisherAddEdit.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/PublisherAddEdit.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/user/RiderProjects/AvaloniaApplication1/AvaloniaApplication1/Views/MainWindow.axaml]
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/dialogs/ReceiptAddEdit.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/user/DB_form_2/AvaloniaApplication1/AvaloniaApplication1/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

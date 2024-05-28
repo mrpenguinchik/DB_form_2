@@ -9,6 +9,7 @@ public class EmployeeAddEditvm: AddEditViewModel
 {
     private string name="Введите ФИО сотрудника";
     private int rating=0;
+    private float salary=0;
     public string Name
     {
         get => name;
@@ -28,6 +29,15 @@ public class EmployeeAddEditvm: AddEditViewModel
         }
 
 }
+
+    public float Salary
+    {
+        get => salary;
+        set
+        {
+            this.RaiseAndSetIfChanged(ref salary, value);
+        }
+    }
     public EmployeeAddEditvm()
     {
         
@@ -39,6 +49,7 @@ public class EmployeeAddEditvm: AddEditViewModel
         oldEmployee = old;
         Name = oldEmployee.FIO;
         Rating = oldEmployee.rating;
+        Salary = oldEmployee.salary;
     }
     protected override void OnReturn()
     {
@@ -47,13 +58,15 @@ public class EmployeeAddEditvm: AddEditViewModel
             oldEmployee= new modelCurrent.Employee()
             {
                 FIO= Name,
-                rating = Rating
+                rating = Rating,
+                salary = Salary
             };
         }
         else
         {
             oldEmployee.FIO = Name;
             oldEmployee.rating = Rating;
+            oldEmployee.salary = salary;
         }
 
         data = oldEmployee;

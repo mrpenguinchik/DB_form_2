@@ -38,7 +38,7 @@
         <DataGrid  VerticalScrollBarVisibility="Disabled" Grid.Row="1" Grid.Column="1"  Name="DataGrid2" IsEnabled="{Binding HasTwoTables}" IsVisible="{Binding HasTwoTables}" AutoGenerateColumns="True" ItemsSource="{Binding Orderlines, Converter={StaticResource Converter}}" IsReadOnly="True" >
 
         </DataGrid>
-   <TreeView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" >
+   <TreeView Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" >
       
            <TextBlock> Таблицы</TextBlock>
  
@@ -53,21 +53,28 @@
                   <RowDefinition Height="1*"/>
                   <RowDefinition Height="1*"/>
                   <RowDefinition Height="1*"/>
+                  <RowDefinition Height="1*"/>
               </Grid.RowDefinitions>
-              <Button Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  BookClick}">Книги</Button>
-               <Button  Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  AuthorClick}">Авторы</Button>
+              <Button Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  BookClick}">Книги</Button>
+               <Button  Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  AuthorClick}">Авторы</Button>
                <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  PublisherClick}">Издательства</Button>
                <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  GenreClick}">Жанры</Button>
                <Button Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  LocationClick}">Отделы</Button>
                <Button Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  ClientClick}">Клиенты</Button>
-               <Button Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  EmployeeClick}">Сотрудники</Button>
-               <Button Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  OrderClick}">Заказы</Button>
+               <Button Grid.Row="6" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  EmployeeClick}">Сотрудники</Button>
+               <Button Grid.Row="7" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  OrderClick}">Заказы</Button>
+              <Button Grid.Row="8" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding  ReceiptClick}">Закупки</Button>
           </Grid>
        </TreeViewItem>
        <TextBlock>  Статистика</TextBlock>
        <TreeViewItem >
            <StackPanel Margin="-50,0" >
                <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding BookSaleStat}" >популярность книг</Button>
+               <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding AuthorStat}" >популярность авторов</Button>
+               <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding AuthorGenreStat}" >популярность авторов по жанрам</Button>
+               <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding GenreStat}" >популярность жанров</Button>
+               <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding CustomerFavGenre}" >Любимые жанры клиентов</Button>
+               <Button   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Command="{Binding IncomeAndOutcomeThisMonthh}" >Доходы и расходы за месяц</Button>
            </StackPanel>
        </TreeViewItem>
    </TreeView>
@@ -85,4 +92,5 @@
     </Grid>
         <TextBlock Grid.Row="2" Text="{Binding Text}"></TextBlock>
     </Grid>
+    
 </Window>

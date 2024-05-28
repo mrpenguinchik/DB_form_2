@@ -16,7 +16,8 @@
                     <TextBlock FontSize="16" HorizontalAlignment="Center"> Название</TextBlock>
                     <TextBox HorizontalAlignment="Stretch"  Text="{Binding Name}"></TextBox>
                     <TextBlock FontSize="16" HorizontalAlignment="Center"> Цену</TextBlock>
-                    <TextBox HorizontalAlignment="Stretch" Text="{Binding Price}"></TextBox>
+                    <NumericUpDown Value="{Binding Price}" Text="{Binding Price}" Increment="0.05" 
+                                   FormatString="0.00"></NumericUpDown>
                     <TextBlock FontSize="16" HorizontalAlignment="Center"> Артикул</TextBlock>
                     <TextBox HorizontalAlignment="Stretch" Text="{Binding Articul}"></TextBox>
                     <TextBlock FontSize="16" HorizontalAlignment="Center"> Штрихкод</TextBlock>

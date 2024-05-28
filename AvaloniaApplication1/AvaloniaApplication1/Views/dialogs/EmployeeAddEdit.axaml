@@ -17,8 +17,10 @@
         <TextBox HorizontalAlignment="Stretch" Text="{Binding Name}" ></TextBox>
         <TextBlock FontSize="16" HorizontalAlignment="Center"> Рейтинг</TextBlock>
         <TextBox  HorizontalAlignment="Stretch" Text="{Binding Rating }"   >
-
+        
         </TextBox>
+        <TextBlock FontSize="16" HorizontalAlignment="Center"> зарплата</TextBlock>
+        <NumericUpDown Value="{Binding Salary}" Increment="1" FormatString="0.00"/>
         <Button Command="{Binding Close}">Подтвердить</Button>
     </StackPanel>
 </Window>

@@ -14,9 +14,15 @@ public class ApplicationContext : DbContext
     public DbSet<Customer> Customers { get; set; } = null!;
     public DbSet<Employee> Employees { get; set; } = null!;
     public DbSet<Order> Orders { get; set; } = null!;
+    public DbSet<Receipt> Receipts { get; set; } = null!;
     public DbSet<OrderLine> OrderLines { get; set; } = null!;
     public DbSet<BookSaleStats> BookSaleStats { get; set; } = null!;
-
+    public DbSet<AuthorStats> AuthorStats { get; set; } = null!;
+    public DbSet<AuthorGenreStats>AuthorGenreStats { get; set; } = null!;
+    public DbSet<GenreStats> GenreStats { get; set; } = null!;
+    public DbSet<CustomerFavGenres> CustomerFavGenres { get; set; } = null!;
+    public DbSet<IncomeAndOutcomeThisMonth> IncomeAndOutcomeThisMonth { get; set; } = null!;
+    
 public string Conn="Host=localhost;Port=5432;Database=bookShop;Username=postgres;Password=1234";
     public ApplicationContext()
     {

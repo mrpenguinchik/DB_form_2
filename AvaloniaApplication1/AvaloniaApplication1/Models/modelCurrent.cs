@@ -21,7 +21,7 @@ namespace eftest
             [Column("name")]
             public  string name { get; set; }
             [Column("price")]
-            public   int price { get; set; }
+            public float price { get; set; }
             [Column("barcode")]
             public  string barcode { get; set; }
             [Column("article")]
@@ -47,6 +47,8 @@ namespace eftest
             {
                 return name;
             }
+            [Column("deleted")]
+            public bool deleted;
         }
         [Table("authors")]
         public class Author
@@ -56,6 +58,8 @@ namespace eftest
             public int id { get; set; }
             [Column("name")]
             public string? name { get; set; }
+            [Column("deleted")]
+            public bool deleted;
             public override string? ToString() { return name; }
             public List<Book> books { get; set; } = new();
             
@@ -69,6 +73,8 @@ namespace eftest
             [Column("name")]
             public string name { get; set; }
             public override string ToString() { return name; }
+            [Column("deleted")]
+            public bool deleted;
             public List<Book> books { get; set; } = new();
         }
         [Table("location")]
@@ -79,6 +85,8 @@ namespace eftest
             public int id { get; set; }
             [Column("name")]
             public string name { get; set; }
+            [Column("deleted")]
+            public bool deleted;
             public override string ToString() { return name; }
             public List<Book> books { get; set; } = new();
         }
@@ -92,7 +100,8 @@ namespace eftest
             [Column("name")]
             public string name { get; set; }
             public List<Book> books { get; set; }=new();
-        
+            [Column("deleted")]
+            public bool deleted;
             public List<BooksGenre> BooksGenres { get; set; } = new();
             public override string ToString()
             {
@@ -113,6 +122,8 @@ namespace eftest
             [ForeignKey("booksgenres_genreid_fkey")]
             public int genreid { get; set; }
             public Genre genre { get; set; }
+            [Column("deleted")]
+            public bool deleted;
 
         }
         [Table("customers")]
@@ -122,11 +133,14 @@ namespace eftest
             [Column("id")]
 
             public int id { get; set; }
-            [Column("FIO")]
+            [Column("fio")]
             public string FIO { get; set; }
             [Column("bonuses")]
             public int bonuses { get; set; }
+            [Column("deleted")]
+            public bool deleted;
             public List<Order> orders { get; set; }= new();
+        
             public override string ToString()
             {
                 return FIO;
@@ -143,7 +157,11 @@ namespace eftest
             public string FIO { get; set; }
             [Column("rating")]
             public int rating { get; set; }
+            [Column("salary")]
+            public float salary{ get; set; }
             public List<Order> orders { get; set; } = new();
+            [Column("deleted")]
+            public bool deleted;
             public override string ToString()
             {
                 return FIO;
@@ -166,10 +184,12 @@ namespace eftest
             public int employeeid { get; set; }
             
             [Column("sum")]
-            public int sum {  get; set; }
+            public float sum {  get; set; }
             public Employee Employee { get; set; } = new();
             public Customer Customer { get; set; } = new();
             public List<OrderLine> OrderLines { get; set; }= new();
+            [Column("deleted")]
+            public bool deleted;
             
             public override string ToString()
             {
@@ -197,7 +217,31 @@ namespace eftest
             {
                 return book.name+"  "+amount.ToString();
             }
-     
+            [Column("deleted")]
+            public bool deleted;
+        }
+        [Table("receipt")]
+        public class Receipt
+        {
+            [Key]
+            [Column("id")]
+
+            public int id { get; set; }
+            [Column("bookid")]
+            [ForeignKey("receipt_bookid_fkey")]
+            public int bookid { get; set; }
+            [Column("amount_of_books")]
+            public int amount { get; set; }
+            public Book book { get; set; }
+
+            [Column("sum")]
+            public float sum { get; set; }
+            public override string ToString()
+            {
+                return book.name+"  "+amount.ToString();
+            }
+            [Column("deleted")]
+            public bool deleted;
         }
         [Keyless]
         public class BookSaleStats
@@ -207,7 +251,67 @@ namespace eftest
             
             public int amount_of_sales { get; set; }
             [Column("price")]
-            public int sum_of_money { get; set; }
+            public float sum_of_money { get; set; }
+            
+        }
+        [Keyless]
+        public class AuthorStats
+        {     [Column("author_name")]
+            public string author_name { get; set; }
+            [Column("amount")]
+            
+            public int amount_of_sales { get; set; }
+            [Column("price")]
+            public float sum_of_money { get; set; }
+            
+        }
+        [Keyless]
+        public class AuthorGenreStats
+        {    [Column("author_name")]
+            public string author_name { get; set; }
+            [Column("genre_name")]
+            public string genre_name { get; set; }
+            [Column("am")]
+            
+            public int amount_of_sales { get; set; }
+            [Column("price")]
+            public float sum_of_money { get; set; }
+            
+        }
+        [Keyless]
+        public class CustomerFavGenres
+        {     [Column("fio")]
+            public string FIO_of_customer { get; set; }
+            [Column("name")]
+            public string genre_name { get; set; }
+            [Column("am")]
+            
+            public int amount_of_sales { get; set; }
+            [Column("price")]
+            public float sum_of_money { get; set; }
+            
+        }
+        [Keyless]
+        public class GenreStats
+        {        [Column("name")]
+            public string genre_name { get; set; }
+            [Column("am")]
+            
+            public int amount_of_sales { get; set; }
+            [Column("price")]
+            public float sum_of_money { get; set; }
+            
+        }
+        [Keyless]
+        public class IncomeAndOutcomeThisMonth
+        {     [Column("income")]
+            public float income { get; set; }
+            [Column("outcome")]
+            
+            public float  outcome { get; set; }
+            [Column("fin")]
+            public float final { get; set; }
+            
         }
     }
 }

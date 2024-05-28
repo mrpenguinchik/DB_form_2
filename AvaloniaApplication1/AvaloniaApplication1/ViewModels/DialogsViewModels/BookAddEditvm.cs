@@ -61,9 +61,9 @@ public class BookAddEditvm: AddEditViewModel
         get => barcode;
         set => this.RaiseAndSetIfChanged(ref barcode, value);
     }
-    private int price = 0;
+    private  float price = 0;
 
-    public int Price
+    public float Price
     {
         get => price;
         set => this.RaiseAndSetIfChanged(ref price, value);

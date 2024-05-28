@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\RiderProjects\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj": {}
+    "C:\\Users\\user\\DB_form_2\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\RiderProjects\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj": {
+    "C:\\Users\\user\\DB_form_2\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\RiderProjects\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\user\\DB_form_2\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj",
         "projectName": "AvaloniaApplication1",
-        "projectPath": "C:\\Users\\user\\RiderProjects\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj",
+        "projectPath": "C:\\Users\\user\\DB_form_2\\AvaloniaApplication1\\AvaloniaApplication1\\AvaloniaApplication1.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\RiderProjects\\AvaloniaApplication1\\AvaloniaApplication1\\obj\\",
+        "outputPath": "C:\\Users\\user\\DB_form_2\\AvaloniaApplication1\\AvaloniaApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

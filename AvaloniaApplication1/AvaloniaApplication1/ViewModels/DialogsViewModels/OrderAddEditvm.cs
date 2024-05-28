@@ -171,7 +171,7 @@ public class OrderAddEditvm: AddEditViewModel
         newOrder.Customer = SelectedCustomer;
         newOrder.Employee = SelectedEmployee;
         newOrder.OrderLines = NewOrderLines.ToList();
-        int sum=0;
+        float sum=0;
         foreach (modelCurrent.OrderLine line in newOrder.OrderLines)
         {
             sum += line.book.price * line.amount;

@@ -58,7 +58,10 @@ public class Converter : IValueConverter
         {
             return orderLines.Select(b=> new OrderLineObservable(b));
         }
-     
+        if (value is ObservableCollection<modelCurrent.Receipt> receipts)
+        {
+            return receipts.Select(b=> new ReceiptObservable(b));
+        }
         // converter used for the wrong type
         return value;
     }
@@ -87,7 +90,7 @@ public class BookObservable:converted<modelCurrent.Book>
 { 
     
     public string Name {  set; get; }
-    public int Price {  set; get; }
+    public float Price {  set; get; }
     public string? Author {  set; get; }
     public string Publisher {  set; get; }
     public int Article {  set; get; }
@@ -165,12 +168,14 @@ public class EmployeeObservable:converted<modelCurrent.Employee>
 {
     public string FIO { get; set; }
     public int rating { get; set; }
+    public float salary{ get; set; }
     
     public  EmployeeObservable(modelCurrent.Employee baseEmployee)
     {
         baseType =baseEmployee;
         FIO = baseEmployee.FIO;
         rating = baseEmployee.rating;
+        salary = baseEmployee.salary;
     }
 }
 
@@ -179,7 +184,7 @@ public class OrderObservable:converted<modelCurrent.Order>
    
     public string Employee { get; set; } 
     public string Customer { get; set; } 
-    public int sum {  get; set; }
+    public float sum {  get; set; }
     public  OrderObservable(modelCurrent.Order baseOrder)
     {
         baseType =baseOrder;
@@ -193,7 +198,7 @@ public class OrderLineObservable:converted<modelCurrent.OrderLine>
 {
   
     public string book { get; set; }
-    public int price { get; set; }
+    public float price { get; set; }
 
     public int amount { get; set; }
     
@@ -204,6 +209,25 @@ public class OrderLineObservable:converted<modelCurrent.OrderLine>
         amount = baseOrder.amount;
         book = baseOrder.book.name;
         price = baseOrder.book.price;
+    }
+     
+}
+public class ReceiptObservable:converted<modelCurrent.Receipt>
+{
+  
+    public string book { get; set; }
+    public int amount { get; set; }
+    public float sum { get; set; }
+
+  
+    
+    
+    public  ReceiptObservable(modelCurrent.Receipt baseReceipt)
+    {
+        baseType =baseReceipt;
+        amount = baseReceipt.amount;
+        book = baseReceipt.book.name;
+        sum = baseReceipt.sum;
     }
      
 }

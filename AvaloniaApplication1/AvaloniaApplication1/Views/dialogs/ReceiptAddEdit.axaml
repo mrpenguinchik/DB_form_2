@@ -1,0 +1,23 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaApplication1.Views.dialogs.ReceiptAddEdit"
+        xmlns:dialogsViewModels="clr-namespace:AvaloniaApplication1.ViewModels.DialogsViewModels"
+        x:DataType="dialogsViewModels:ReceiptAddEditvm"
+        Title="ReceiptAddEdit">
+    <StackPanel>
+        <TextBlock FontSize="24" HorizontalAlignment="Center"> Введите данные прихода</TextBlock>
+        <TextBlock FontSize="16" HorizontalAlignment="Center"> Количество</TextBlock>
+        <TextBox HorizontalAlignment="Stretch"  Text="{Binding Amount}"></TextBox>
+        <TextBlock FontSize="16" HorizontalAlignment="Center"> Уплачено</TextBlock>
+        <NumericUpDown Value="{Binding Sum}" Increment="0.05" 
+                       FormatString="0.00"></NumericUpDown>
+    <TextBlock FontSize="16" HorizontalAlignment="Center"> Книга</TextBlock>
+    <TextBox Text="{Binding FindBook}"></TextBox>
+    <ComboBox ItemsSource="{Binding Books}" SelectedItem="{Binding Book}" ></ComboBox>
+        <Button Command="{Binding Close}">Подтвердить</Button>
+        </StackPanel>
+    
+</Window>
